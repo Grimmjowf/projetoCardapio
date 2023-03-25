@@ -1,30 +1,36 @@
-<ion-header [translucent]="true">
+<ion-header [translucent]="false" class="cl-header">
+  
  
-  <ion-row class="ion-align-items-center header-line">
-    <ion-col  size="2" class="menu-icon">
-      <ion-icon name="reorder-three"></ion-icon>
-    </ion-col>
-    <ion-col size="8">
-      UniFCV Salgados
-    </ion-col>
-    <ion-col size="2" class="ion-text-end account-icon">
-      <ion-icon name="person-circle-outline"></ion-icon>
-    </ion-col>
-  </ion-row>
-  <ion-row>
-    <ion-col>
-      <ion-icon></ion-icon>
-    </ion-col>
-  </ion-row>
+      <ion-row class="ion-align-items-center header-line">
+        <ion-col  size="2" class="menu-icon">
+          <ion-icon name="reorder-three"></ion-icon>
+        </ion-col>
+        <ion-col size="8">
+          UniFCV Salgados
+        </ion-col>
+        <ion-col size="2" class="ion-text-end account-icon">
+          <ion-icon name="person-circle-outline"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-align-items-center header-subline">
+        
+        <ion-col>
+        <ion-segment>
+          <ion-segment-button value="0" class="cl-seguimento">
+            <ion-label>BURGUER</ion-label>
+          </ion-segment-button>
+          
+          <ion-segment-button value="1"class="cl-seguimento">
+            <ion-label>PIZZAS</ion-label>
+          </ion-segment-button>
+        </ion-segment>
+        </ion-col>
+      </ion-row>
 
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-     
-    </ion-toolbar>
-  </ion-header>
+<ion-content [fullscreen]="true" class="cl-content">
+
 
   <ion-fab vertical="bottom" horizontal="end" slot="fixed" class="btn-order">
     <ion-fab-button>

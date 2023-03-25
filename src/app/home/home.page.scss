@@ -29,8 +29,24 @@
 }
 
 .header-line{
-  background-color: rgb(143, 11, 11);
-  
-  
+  background-color: var(--principal);
+  font-family: 'Muli';
+  font-style: italic;
+  font-weight: bold;
+ 
 }
 
+.header-subline{
+  background-color: var(--mostarda);
+  font-family: 'Muli';
+  font-style: italic;
+  font-weight: bold;
+}
+ .cl-seguimento{
+  border-radius: 20px;
+  border: 1px solid white;
+  
+ }
+ .cl-header{
+  background-color: white;
+ }
