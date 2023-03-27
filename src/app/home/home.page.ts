@@ -7,6 +7,8 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
+  public segment = '0';
+  
   constructor() {}
 
 }

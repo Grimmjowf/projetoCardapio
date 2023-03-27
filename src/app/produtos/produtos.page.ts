@@ -7,6 +7,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProdutosPage implements OnInit {
 
+  public burguer=[
+    {nome:'',categoria:'', descricao:'', valor:''},
+    {nome:'',categoria:'', descricao:'', valor:''},
+    {nome:'',categoria:'', descricao:'', valor:''},
+    {nome:'',categoria:'', descricao:'', valor:''},
+    {nome:'',categoria:'', descricao:'', valor:''},
+  ]
+  public drink=[
+    {nome:'',categoria:'', descricao:'', valor:''},
+    {nome:'',categoria:'', descricao:'', valor:''},
+    {nome:'',categoria:'', descricao:'', valor:''},
+    {nome:'',categoria:'', descricao:'', valor:''},
+    {nome:'',categoria:'', descricao:'', valor:''},
+  ]
+
   constructor() { }
 
   ngOnInit() {
