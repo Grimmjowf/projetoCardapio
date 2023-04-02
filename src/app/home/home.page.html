@@ -32,12 +32,18 @@
   </ion-row>
 </ion-header>
 
+<!-- seguimento burguer -->
 <ion-content [fullscreen]="true" class="cl-content">
   <ion-grid *ngIf="segment == '0'">
-  Burguer
-  
-  
+   
+    <ion-row>
+        <ion-col size="12" class="img-produto" *ngFor="let burguer of burguer; let ix = index">
+          <img [src]="burguerImg + burguer.imagem"/>
+        </ion-col>
+      </ion-row>
   </ion-grid>
+ 
+ <!-- Seguimento Pizza -->
   <ion-grid *ngIf="segment == '1'">
   Drinks
   
