@@ -2,10 +2,10 @@
   
  
       <ion-row class="ion-align-items-center header-line">
-        <ion-col  size="2" class="menu-icon">
+        <ion-col  size="4" class="menu-icon">
           <ion-icon name="reorder-three"></ion-icon>
         </ion-col>
-        <ion-col size="8">
+        <ion-col size="6">
           Bull Burguer        
         </ion-col>
         <ion-col size="2" class="ion-text-end account-icon">
@@ -32,27 +32,90 @@
   </ion-row>
 </ion-header>
 
-<!-- seguimento burguer -->
-<ion-content [fullscreen]="true" class="cl-content">
-  <ion-grid *ngIf="segment == '0'">
-   
-    <ion-row>
-        <ion-col size="12" class="img-produto" *ngFor="let burguer of burguer; let ix = index">
-          <img [src]="burguerImg + burguer.imagem"/>
-        </ion-col>
-      </ion-row>
-  </ion-grid>
- 
- <!-- Seguimento Pizza -->
-  <ion-grid *ngIf="segment == '1'">
-  Drinks
-  
-  
-  </ion-grid>
 
+  <ion-content [fullscreen]="true" class="cl-content">
+    <!-- seguimento burguer -->
+      <ion-grid *ngIf="segment == '0'">
+        
+        <ion-row>
+         <ion-col size="6" *ngFor="let burguer of burguers; let ix = index">
+          <ion-row>
+           <ion-col size="12" class="card-produto">
+
+            <ion-row>
+              <ion-col size="6" class="img-produto" >
+                <img [src]="produtosImg + burguer.imagem"/>
+              </ion-col>
+            </ion-row>
+
+            <ion-row style="height: 45px;"> 
+              <ion-col size="12" class="titulo-produto">
+                {{burguer.nome}}
+              </ion-col>
+            </ion-row>
+
+            <ion-row>
+              <ion-col class="valor-produto">
+                {{burguer.valor}}
+              </ion-col>
+            </ion-row>
+
+            <ion-row>
+              <ion-col size="12" class="col-botao-detalhes">
+                <span class="botao-detalhes"> Detalhes </span>
+              </ion-col>
+            </ion-row>
+        
+         </ion-col>
+        </ion-row> 
+       </ion-col>
+      </ion-row>
+
+      </ion-grid>
+ 
+ <!-- Seguimento Drink-->
+  <ion-grid *ngIf="segment == '1'">
+            
+    <ion-row>
+      <ion-col size="6" *ngFor="let drink of drinks; let ix = index">
+       <ion-row>
+        <ion-col size="12" class="card-produto">
+
+         <ion-row>
+           <ion-col size="6" class="img-produto" >
+             <img [src]="produtosImg + drink.imagem"/>
+           </ion-col>
+         </ion-row>
+
+         <ion-row style="height: 45px;"> 
+           <ion-col size="12" class="titulo-produto">
+             {{drink.nome}}
+           </ion-col>
+         </ion-row>
+
+         <ion-row>
+           <ion-col class="valor-produto">
+             {{drink.valor}}
+           </ion-col>
+         </ion-row>
+
+         <ion-row>
+           <ion-col size="12" class="col-botao-detalhes">
+             <span class="botao-detalhes"> Detalhes </span>
+           </ion-col>
+         </ion-row>
+     
+      </ion-col>
+     </ion-row> 
+    </ion-col>
+   </ion-row>
+  
+  </ion-grid>
+  <ion-row></ion-row>
   <ion-fab vertical="bottom" horizontal="end" slot="fixed" class="btn-order">
     <ion-fab-button>
       <ion-icon name="cart-outline"></ion-icon>
     </ion-fab-button>
   </ion-fab>
+
 </ion-content>
