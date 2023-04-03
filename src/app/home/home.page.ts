@@ -9,10 +9,10 @@ import{ NavController} from '@ionic/angular';
 export class HomePage {
 
   public burguers=[
-    {nome:'Bull Ticken',categoria:1, descricao:'', valor:'R$ 32.90', imagem:'0.1.bull.ticken.png', visibled: false },
-    {nome:'Bull Duplo',categoria:2, descricao:'', valor:'R$ 29.90', imagem:'0.2.bull.duplo.png', visibled: false },
-    {nome:'Bull Costela',categoria:3, descricao:'', valor:'R$ 34.90', imagem:'0.3.bull.costela.png', visibled: false},
-    {nome:'Bull Americano',categoria:4, descricao:'', valor:'R$ 36.90', imagem:'0.4.bull.americano.png', visibled: false}
+    {nome:'Bull Ticken',categoria:1, descricao:'Duas fatias de pão artesanal, 160 gramas de Frango empanado, 100 gramas de carne de hamburguer, salada, molho da casa, queijo mussarela e presunto.', valor:'R$ 32.90', imagem:'0.1.bull.ticken.png', visibled: false },
+    {nome:'Bull Duplo',categoria:2, descricao:'Duas fatias de pão artesanal, Duas fatias com 160 gramas de carne de hamburguer, salada, molho da casa, queijo mussarela e presunto.', valor:'R$ 29.90', imagem:'0.2.bull.duplo.png', visibled: false },
+    {nome:'Bull Costela',categoria:3, descricao:'Duas fatias de pão artesanal, 160 gramas de carne de hamburguer de costela, salada, molho da casa, queijo mussarela e presunto.', valor:'R$ 34.90', imagem:'0.3.bull.costela.png', visibled: false},
+    {nome:'Bull Americano',categoria:4, descricao:'Duas fatias de pão artesanal, 160 gramas de carne de hamburguer,salsicha,bacon, cebola, salada, molho da casa, queijo mussarela e presunto.', valor:'R$ 36.90', imagem:'0.4.bull.americano.png', visibled: false}
   ]
 
   public drinks=[
@@ -44,10 +44,15 @@ export class HomePage {
     .map(el => el.visibled = true);
   }
 
-  public goProduto(burguers:any) {
+  public goBurguer(burguers:any) {
     this.navCtrl.navigateForward('produtos', {
       queryParams: { produto: burguers }
     });
   }
 
+  public goDrink(drinks:any) {
+    this.navCtrl.navigateForward('produtos', {
+      queryParams: { produto: drinks }
+    });
+  }
 }

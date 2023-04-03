@@ -1,13 +1,42 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
-      
+      <ion-back-button></ion-back-button>   
     </ion-buttons>
-
+    <ion-title>Voltar</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
 
 </ion-content>
+
+<ion-footer class="footer-produto">
+  <ion-row class="ion-align-items-center">
+    <ion-col size="6" class="valor-produto">
+      
+    </ion-col>
+    
+    <ion-col size="6">
+      <ion-row class="ion-align-items-center">
+        <ion-col size="4" class="ion-text-center">
+          <ion-button (click)="add()">
+            <ion-icon name="add"></ion-icon>
+          </ion-button>
+        </ion-col>
+        
+        <ion-col size="4" class="ion-text-center">
+          <ion-input class="inp-quantidade" type="number" [(ngModel)]="quantidade"></ion-input>
+        </ion-col>
+        
+        <ion-col size="4" class="ion-text-center">
+          <ion-button (click)="remove()">
+            <ion-icon name="remove"></ion-icon>
+          </ion-button>
+        </ion-col>
+      
+      </ion-row>
+    </ion-col>
+  </ion-row>
+
+</ion-footer>
