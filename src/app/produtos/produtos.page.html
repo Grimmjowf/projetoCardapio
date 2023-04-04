@@ -3,18 +3,30 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>   
     </ion-buttons>
-    <ion-title>Voltar</ion-title>
+    <ion-title>{{produto.nome}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  
+  <ion-row>
+    <ion-col size="12" class="img-produto" >
+      <img [src]="produtosImg + produto.imagem"/>
+    </ion-col>
+  </ion-row>
 
+  <ion-row>
+    <ion-col size="12" class="descricao-produto">
+      {{ produto.descricao }}
+    </ion-col>
+  </ion-row>
 </ion-content>
 
 <ion-footer class="footer-produto">
+
   <ion-row class="ion-align-items-center">
     <ion-col size="6" class="valor-produto">
-      
+      {{produto.valor}}
     </ion-col>
     
     <ion-col size="6">

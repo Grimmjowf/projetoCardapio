@@ -16,7 +16,7 @@
         
       <ion-col size="6">
           <ion-segment [(ngModel)]="segment">
-            <ion-segment-button  [value]="'0'" class="cl-segmento">
+            <ion-segment-button  [value]="categoria[0].id" class="cl-segmento">
               <ion-label>Burguers</ion-label>
             </ion-segment-button>
           </ion-segment>
@@ -24,7 +24,7 @@
     
     <ion-col size="6">
       <ion-segment [(ngModel)]="segment">
-            <ion-segment-button [value]="'1'" class="cl-segmento">
+            <ion-segment-button [value]="categoria[1].id" class="cl-segmento">
               <ion-label>Drinks</ion-label>
             </ion-segment-button>
           </ion-segment>
@@ -35,34 +35,34 @@
 
   <ion-content [fullscreen]="true" class="cl-content">
     <!-- seguimento burguer -->
-      <ion-grid *ngIf="segment == '0'">
+      <ion-grid *ngFor="let categoria of categoria; let ix = index" >
         
-        <ion-row>
-         <ion-col size="6" *ngFor="let burguer of burguers; let ix = index" (click)="goBurguer(burguers)">
+        <ion-row *ngIf="segment == categoria.id">
+         <ion-col size="6" *ngFor="let produto of categoria.produtos">
           <ion-row>
            <ion-col size="12" class="card-produto">
 
             <ion-row>
               <ion-col size="6" class="img-produto" >
-                <img [src]="produtosImg + burguer.imagem"/>
+                <img [src]="produtosImg + produto.imagem"/>
               </ion-col>
             </ion-row>
 
             <ion-row style="height: 45px;"> 
               <ion-col size="12" class="titulo-produto">
-                {{burguer.nome}}
+                {{produto.nome}}
               </ion-col>
             </ion-row>
 
             <ion-row>
               <ion-col class="valor-produto">
-                {{burguer.valor}}
+                {{produto.valor}}
               </ion-col>
             </ion-row>
 
             <ion-row>
               <ion-col size="12" class="col-botao-detalhes">
-                <span class="botao-detalhes"> Detalhes </span>
+                <span class="botao-detalhes" (click)="verProduto(produto)"> Detalhes </span>
               </ion-col>
             </ion-row>
         
@@ -71,45 +71,6 @@
        </ion-col>
       </ion-row>
 
-      </ion-grid>
- 
- <!-- Seguimento Drink-->
-  <ion-grid *ngIf="segment == '1'">
-            
-    <ion-row>
-      <ion-col size="6" *ngFor="let drink of drinks; let ix = index" (click)="goDrink(drinks)" >
-       <ion-row>
-        <ion-col size="12" class="card-produto">
-
-         <ion-row>
-           <ion-col size="6" class="img-produto" >
-             <img [src]="produtosImg + drink.imagem"/>
-           </ion-col>
-         </ion-row>
-
-         <ion-row style="height: 45px;"> 
-           <ion-col size="12" class="titulo-produto">
-             {{drink.nome}}
-           </ion-col>
-         </ion-row>
-
-         <ion-row>
-           <ion-col class="valor-produto">
-             {{drink.valor}}
-           </ion-col>
-         </ion-row>
-
-         <ion-row>
-           <ion-col size="12" class="col-botao-detalhes">
-             <span class="botao-detalhes"> Detalhes </span>
-           </ion-col>
-         </ion-row>
-     
-      </ion-col>
-     </ion-row> 
-    </ion-col>
-   </ion-row>
-  
   </ion-grid>
   <ion-row></ion-row>
   <ion-fab vertical="bottom" horizontal="end" slot="fixed" class="btn-order">

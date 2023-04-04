@@ -15,17 +15,17 @@ export class ProdutosPage implements OnInit {
   public produto = { 
     
     nome        : '',
-    categoria   : 0,
+    categoria   : '',
     descricao   : '', 
     valor       : '', 
-    imagens     : '', 
+    imagem    : '', 
     visibled    :false,
 
   }
 
   constructor(private route: ActivatedRoute) {
     this.route.queryParams.subscribe(params => {
-      this.produto = params['produtos'];
+      this.produto = params['produto'];
     });
   }
 
